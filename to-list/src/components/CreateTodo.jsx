@@ -19,7 +19,7 @@ const CreateTodo = ({ dispatch }) => {
   };
   return (
     <div style={{ width: "100%" }}>
-      <form onSubmit={(e) => addTodo(e, textValue, dispatch)}>
+      <form onSubmit={addTodo}>
         <InputTodoWrapper>
           <AiOutlinePlusCircle
             className="icon"
