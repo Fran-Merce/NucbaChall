@@ -1,17 +1,18 @@
 import React, { useState, useReducer, useContext, useEffect } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { addTodoAction } from "../actions/actions";
+import { todoContext } from "../context/context";
 import "../index.css";
-import TYPES from "../types/TYPES.JS";
 
 import InputTodoWrapper from "./styles/InputTodoWrapper";
-const CreateTodo = ({ dispatch }) => {
+const CreateTodo = () => {
   const [textValue, setTextValue] = useState("");
+  const { dispatch } = useContext(todoContext);
 
-  const onChangeText = (e) => {
+  const onChangeText = e => {
     setTextValue(e.target.value);
   };
-  const addTodo = (e) => {
+  const addTodo = e => {
     e.preventDefault();
     if (textValue === "") return;
     dispatch(addTodoAction(textValue));

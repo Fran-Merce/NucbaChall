@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import TYPES from "../types/TYPES";
+import React, { useContext, useState } from "react";
+
 import TodoItemWrapper from "./styles/TodoItemWrapper";
 import { AiFillDelete, AiOutlineCheck } from "react-icons/ai";
 import { deleteTodoAction } from "../actions/actions";
-const TodoItem = ({ text, dispatch, id }) => {
+import { todoContext } from "../context/context";
+const TodoItem = ({ text, id }) => {
   const [complete, setComplete] = useState(false);
-
+  const { dispatch } = useContext(todoContext);
   const deleteTodo = () => {
     dispatch(deleteTodoAction(id));
   };

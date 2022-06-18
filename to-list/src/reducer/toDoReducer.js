@@ -1,7 +1,6 @@
 import TYPES from "../types/TYPES";
 
 const toDoReducer = (state = [], action) => {
-  console.log(state.todos)
   switch (action.type) {
     case TYPES.ADD_TODO:
       return {
@@ -16,12 +15,11 @@ const toDoReducer = (state = [], action) => {
     case TYPES.DELETE_TODO:
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.id !== action.payload.id),
-      }
+        todos: state.todos.filter(todo => todo.id !== action.payload.id),
+      };
     default:
       return state;
   }
-
 };
 
 export default toDoReducer;
