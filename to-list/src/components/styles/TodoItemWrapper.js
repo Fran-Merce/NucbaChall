@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const TodoItemWrapper = styled.div`
   width: 90%;
-  height: 4rem;
+  min-height: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
